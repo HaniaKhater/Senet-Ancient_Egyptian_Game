@@ -63,6 +63,7 @@ def main():
     canvas = make_canvas(CANVAS_WIDTH, CANVAS_HEIGHT, 'Senet')
     global kanvas
     kanvas = canvas
+    canvas.create_rectangle(0, 0,CANVAS_WIDTH, CANVAS_HEIGHT, fill="white", width=0)
     # SET UP
 
     # Store and adjust the x & y coordinates of each board square in lists
@@ -158,7 +159,7 @@ def draw_board_squares(canvas, square_x, square_y):
 def draw_square(canvas, row, col, squares_x, squares_y):
     x = col * SIZE
     y = (row * SIZE) + BOARD_TOP_Y
-    canvas.create_rectangle(x, y, x + SIZE, y + SIZE, width=5)
+    canvas.create_rectangle(x, y, x + SIZE, y + SIZE, fill="white", width=5)
     squares_x.append(x)
     squares_y.append(y)
 
@@ -456,7 +457,7 @@ def go_off_board(current_squ_clicked):
         kanvas.moveto(pawn_leaving, x, y)
 
 
-"""""        
+"""""
 Set up the GAME OVER
 """""
 
